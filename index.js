@@ -1,9 +1,15 @@
-const a = Object.freeze({
-    x: 1,
-    y: 2,
+function main() {
+    console.log(this);
 }
-)
 
-a.x = 3;
+const object = {
+    name: "별코딩",
+    smallObject: {
+        name: "작은 별코딩",
+        main, 
+    },
+};
 
-console.log(a);
+object.smallObject.main();
+
+
