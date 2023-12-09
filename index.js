@@ -1,5 +1,5 @@
-const button = document.getElementById('btn');
+const main = (...params) => {
+    console.log(params[2])
+}
 
-button.addEventListener("click", function (event) {
-    console.log(event.target === this);
-});
+main(1, 2, 3)
