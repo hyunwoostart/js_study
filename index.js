@@ -1,5 +1,12 @@
-const main = (...params) => {
-    console.log(params[2])
-}
+const object = {
+    name: '별코딩',
+    main: function () {
+        console.log(this);
+        setTimeout(() => {
+            console.log(this);
+        }, 1000);
+    },
+};
 
-main(1, 2, 3)
+object.main();
+
