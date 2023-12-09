@@ -1,7 +1,8 @@
-function main() {
-    console.log(this);
-}
+const object = {
+    name: '별코딩',
+    main: function () {
+        console.log(this);
+    }.bind({name: "멋진 객체"}),
+};
 
-const mainBind = main.bind({ name: "hi" });
-const mainBindBind = mainBind.bind({})
-mainBindBind();
+object.main();
