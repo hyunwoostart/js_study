@@ -1,12 +1,15 @@
-const object = {
-    name: '별코딩',
-    main: function () {
-        console.log(this);
-        setTimeout(() => {
-            console.log(this);
-        }, 1000);
-    },
-};
+function greetToUser(greet) {
+    const name = "별코딩";
+    // .... 데이터 로딩
+    greet(name);
+}
 
-object.main();
+function greetInKorean(name) {
+    console.log(name + '님, 안녕하세요');
+}
 
+function greetInEnglish(name) {
+    console.log("Hi, " + name);
+}
+
+greetToUser(greetInEnglish);
