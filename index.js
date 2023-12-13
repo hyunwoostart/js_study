@@ -1,7 +1,5 @@
-console.log('시작');
+// 1. 로그인
 
-setTimeout(() => {
-    console.log('2');
-}, 3000);
+// 2. 장바구니에 넣기
 
-console.log('1');
+// 3. 결제하기
