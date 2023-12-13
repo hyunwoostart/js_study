@@ -1,15 +1,7 @@
-function greetToUser(greet) {
-    const name = "별코딩";
-    // .... 데이터 로딩
-    greet(name);
-}
+console.log('시작');
 
-function greetInKorean(name) {
-    console.log(name + '님, 안녕하세요');
-}
+setTimeout(() => {
+    console.log('2');
+}, 3000);
 
-function greetInEnglish(name) {
-    console.log("Hi, " + name);
-}
-
-greetToUser(greetInEnglish);
+console.log('1');
