@@ -1,33 +1,38 @@
-// 1. 로그인
-function login(username, callback) {
-    setTimeout(() => {
-        callback(username);
-    }, 1000);
-}
+// 이차원 배열 - 배열 내부의 값을 요소
+// const everything = ['사과', 1, undefined, true, '배열', null];
+const duplicate = ['가', '가', '가', '가', '가'];
+const empty = [];
 
+// 배열의 요소 개수 구하기
+const everything = ['사과', 1, undefined, true, '배열', null];
+console.log(everything.length);
 
-// 2. 장바구니에 넣기
-function addTocart(product, callback) {
-    setTimeout(() => {
-        callback(product);
-    }, 1000);
-}
+const emptyValue = [null, undefined, false, '', NaN];
+console.log(emptyValue.length);
 
+const findLastElement = ['a', 'b', 'c', 'd', 'e'];
+console.log(findLastElement[findLastElement.length - 1]);
 
-// 3. 결제하기
+// 배열의 요소 추가하기
+// const target = ['a', 'b', 'c', 'd', 'e'];
+// target[5] = 'f';
+// console.log(target);
 
-function makePayment(cardNumber, product, callback) {
-    setTimeout(() => {
-        callback(cardNumber, product);
-    }, 1000);
-}
+// const target = ['가', '나', '다', '라', '마'];
+// target[target.length] = '바';
+// console.log(target);
 
-login('지현우', (username) => {
-    console.log(`${username}님 안녕하세요`);
-    addTocart("감자", (product) => {
-        console.log(`${product}를 장바구니에 넣었습니다`);
-        makePayment("0000000000000000", product, (cardNumber, item) => {
-            console.log(`${cardNumber.slice(0, 6)}로 ${product}를 구매했습니다.`)
-        });
-    });
-});
+// const target = ['나', '다', '라', '마', '바'];
+// target.unshift('가');
+// console.log(target);
+
+const target = ['가', '나', '다', '라', '마'];
+target.push('바');
+console.log(target);
+
+// const인데 수정 가능한 이유는 뭔가요?
+/* const에는 새로운 값을 대입(=)하지 못한다고 기억하면 됩니다. const에 객체(배열, 함수, 객체 리터럴)가 대입되면 객체 내부의 속성이나
+배열의 요소는 수정할 수 있습니다. */
+const target2 = ['a', 'b', 'c', 'd', 'e'];
+target2 = ['f', 'g']; // 불가능
+target2[0] = 'h';
