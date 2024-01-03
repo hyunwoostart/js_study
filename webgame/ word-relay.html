@@ -12,17 +12,17 @@
     <button>입력</button>
     <button class="hello">버튼2</button>
     <button class="hello">버튼3</button>
-    <a href="">
-        <span id="b">
-            <div class="c"></div>
-        </span>
-    </a>
     <script>
-        const onClickButton = () => {
+        const onClickbutton = () => {
             console.log('버튼 클릭');
         };
         const $button = document.querySelector('button');
-        $button.addEventListener('click', onClickButton);
+        $button.addEventListener('click', onClickbutton);
+        const onInput = (event) => {
+            console.log('글자 입력', event.target.value);
+        };
+        const $input = document.querySelector('input');
+        $input.addEventListener('input', onInput);
     </script>
 </body>
 </html>
