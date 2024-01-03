@@ -12,12 +12,17 @@
     <button>입력</button>
     <button class="hello">버튼2</button>
     <button class="hello">버튼3</button>
+    <a href="">
+        <span id="b">
+            <div class="c"></div>
+        </span>
+    </a>
     <script>
-        const $order = document.querySelector('#order');
-        console.log($order);
-
-        const $buttons = document.querySelectorAll('.hello');
-        console.log($buttons);
+        const onClickButton = () => {
+            console.log('버튼 클릭');
+        };
+        const $button = document.querySelector('button');
+        $button.addEventListener('click', onClickButton);
     </script>
 </body>
 </html>
