@@ -10,19 +10,28 @@
     <div>제시어: <span id="word"></span></div>
     <input type="text">
     <button>입력</button>
-    <button class="hello">버튼2</button>
-    <button class="hello">버튼3</button>
     <script>
-        const onClickbutton = () => {
-            console.log('버튼 클릭');
-        };
+        const number = Number(prompt('몇 명이 참가하나요?'));
         const $button = document.querySelector('button');
-        $button.addEventListener('click', onClickbutton);
-        const onInput = (event) => {
-            console.log('글자 입력', event.target.value);
-        };
         const $input = document.querySelector('input');
-        $input.addEventListener('input', onInput);
+        const $word = document.querySelector('#word');
+        let word; // 제시어
+        let newWord; // 현재 단어
+
+        const onClickbutton = () => {
+            if(!word) { // 제시어가 비어 있는가?
+                word = newWord; // 입력한 단어가 제시어가 된다.
+                $word.textContent = word; // 화면에 제시어 표시
+            }else {
+                // 비어 있지 않다.
+            }
+        };
+        const onInput = (event) => {
+            newWord = event.target.value;
+        };
+
+        $button.addEventListener('click', onClickbutton);
+        $input.addEventListener('click', onInput);
     </script>
 </body>
 </html>
