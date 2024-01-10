@@ -39,7 +39,6 @@
         <button id="calculate">=</button>
         <button id="multiply">x</button>
     </div>
-
     <script>
         let numOne = '';
         let operator = '';
@@ -59,7 +58,6 @@
             numTwo += event.target.textContent;
             $result.value += event.target.textContent;
         };
-
         document.querySelector('#num-0').addEventListener('click', onClickNumber);
         document.querySelector('#num-1').addEventListener('click', onClickNumber);
         document.querySelector('#num-2').addEventListener('click', onClickNumber);
@@ -70,7 +68,6 @@
         document.querySelector('#num-7').addEventListener('click', onClickNumber);
         document.querySelector('#num-8').addEventListener('click', onClickNumber);
         document.querySelector('#num-9').addEventListener('click', onClickNumber);
-
         const onClickOperator = (op) => () => {
             if (numOne) {
                 operator = op;
@@ -105,7 +102,13 @@
                 alert('숫자를 먼저 입력하세요');
             }
         });
-        document.querySelector('#clear').addEventListener('click', () => {});
+        document.querySelector('#clear').addEventListener('click', () => {
+            numOne = '';
+            numTwo = '';
+            operator = '';
+            $operator.value = '';
+            $result.value = '';
+        });
     </script>
 </body>
 </html>
