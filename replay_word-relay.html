@@ -20,7 +20,7 @@
         let newWord; // 현재 단어
 
         const onClickbutton = () => {
-            if(!word || word[word.length - 1] === newWord[0]) { // 제시어가 비어 있거나 입력한 단어가 올바른가?
+            if(!word || word[word.length - 1] === newWord[0]) { //제시어가 비어 있거나 입력한 단어가 올바른가?
                 word = newWord; // 입력한 단어가 제시어가 된다.
                 $word.textContent = word; // 화면에 제시어 표시
                 const order = Number($order.textContent);
