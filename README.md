@@ -48,3 +48,19 @@ addEventListener로 연결한 함수를 removeEventListener로 제거할 수 있
 funciton 함수() {}
 태그.addEventListener('이벤트', 함수);
 태그.removeEventListener('이벤트', 함수);
+
+# classList
+태그.classList 객체를 통해 태그에 붙은 클래스를 조작할 수 있습니다. 해당 클래스가 존재하는지 확인하려면 contains 메서드를 사용합니다.
+
+태그.classList.contains('클래스');
+
+태그.classList.contains('클래스'); // 추가
+태그.classList.replace('기존 클래스', '수정 클래스'); // 수정
+태그.classList.remove('클래스'); // 제거
+
+# 배열.reduce
+reduce는 배열에 있는 반복 메서드의 일종으로 배열의 요소들을 하나의 값으로 합칩니다.
+
+배열.reduce((누적값, 현잿값) => {
+    return 새로운 누적값;
+}, 초깃값);
