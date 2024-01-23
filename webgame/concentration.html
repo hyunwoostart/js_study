@@ -75,6 +75,9 @@
         }
 
         function onClickCard() {
+            if (!clickable || completed.includes(this) || clicked[0] === this) {
+                return;
+            }
             this.classList.toggle('flipped');
             clicked.push(this);
             if (clicked.length !== 2) {
@@ -117,10 +120,21 @@
             });
 
             setTimeout(() => { // 카드 감추기
-                card.classList.remove('flipped');
+                document.querySelectorAll('.card').forEach((card) => {
+                    card.classList.remove('flipped');
+                });
+                clickable = true;
             }, 5000);
         }
-        startGame();
+        
+        function resetGame() {
+            $wrapper.innerHTML = '';
+            colorCopy = colors.concat(colors);
+            shuffled = [];
+            completed = [];
+            clickable = false;
+            startGame();
+        }
     </script>
 </body>
 </html>
