@@ -3,7 +3,7 @@
 
 const http = require("http");
 
-const server = http.createServer((req, res) => {
+const server = http.createServer((req, res) => {ㅇ
     // req.url: 요청 경로
     // req.method : 요청 방식
 
