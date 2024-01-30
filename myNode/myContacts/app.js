@@ -1,16 +1,23 @@
 const express = require("express");
-const dbConnect = require("./config/dbConnect");
-
 const app = express();
 
-dbConnect();
+const port = 3000;
 
 app.get("/", (req, res) => {
-    res.send('Hello, Node!');
+  res.status(200);
+  res.send("Hello Node!");
 });
 
-app.use("/users", require("./routes/contactRoute"));
+// 모든 연락처 가져오기
+app.get("/contacts", (req, res) => {
+  res.status(200).send("Contacts Page");
+});
 
-app.listen(3000, () => {
-    console.log('서버 실행 중');
+// 새 연락처 추가하기
+app.post("/contacts", (req, res) => {
+  res.status(201).send("Create Contacts");
+});
+
+app.listen(port, () => {
+  console.log(`${port}번 포트에서 서버 실행 중`);
 });
